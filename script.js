@@ -33,25 +33,30 @@ document.querySelector('.check').addEventListener('click', function () {
     }
 
     //When Input is more than the random number
-  } else if (guess > secretNumber) {
+  } else if (guess !== score) {
     if (score > 1) {
-      document.querySelector('.message').textContent = '😮 Too High';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = '🥵 GAME OVER';
-    }
-
-    //When Input is less than the right number
-  } else if (guess < secretNumber) {
-    if (score > 1) {
-      document.querySelector('.message').textContent = '😒 Too Low';
+      document.querySelector('.message').textContent =
+        guess > score ? '😮 Too High' : '😒 Too Low';
       score--;
       document.querySelector('.score').textContent = score;
     } else {
       document.querySelector('.message').textContent = '🥵 GAME OVER';
     }
   }
+
+  //   else if (guess > secretNumber) {
+
+  //   }
+  //   //When Input is less than the right number
+  //   else if (guess < secretNumber) {
+  //     if (score > 1) {
+  //       document.querySelector('.message').textContent = ;
+  //       score--;
+  //       document.querySelector('.score').textContent = score;
+  //     } else {
+  //       document.querySelector('.message').textContent = '🥵 GAME OVER';
+  //     }
+  //   }
 });
 
 document.querySelector('.again').addEventListener('click', function () {
